@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace API.Context
 {
-    public class ContextClass : DbContext
+    public class DataContext : DbContext
     {
-        public ContextClass(DbContextOptions<ContextClass> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
