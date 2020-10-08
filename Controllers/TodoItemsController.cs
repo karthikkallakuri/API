@@ -26,6 +26,10 @@ namespace API.Controllers
             _context = context;
         }
 
+        public TodoItemsController()
+        {
+        }
+
         // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
