@@ -9,7 +9,14 @@ namespace API.Services
     {
         public bool IsPrime(int candidate)
         {
-            throw new NotImplementedException("Please create a test first.");
+            if (candidate == 1)
+            {
+                return false;
+            }
+
+            else return true;
+
+           
         }
     }
 }

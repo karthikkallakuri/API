@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Context;
+using API.Interfaces;
+using API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +30,7 @@ namespace API
         {
             services.AddDbContext<DataContext>(opt =>
                      opt.UseInMemoryDatabase("TodoList"));
+            services.AddScoped<IEmployeeDataRepository, EmployeeRepository>();
             services.AddControllers();
         }
 
