@@ -16,6 +16,11 @@ namespace API.Controllers
     {
         private readonly DataContext _context;
 
+        private static readonly string[] Summaries = new[]
+        {
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
+
         public TodoItemsController(DataContext context)
         {
             _context = context;
@@ -27,6 +32,14 @@ namespace API.Controllers
         {
             return await _context.TodoItems.ToListAsync();
         }
+        //http://localhost:57922/api/TodoItems/usersroles
+        [HttpGet("usersroles")]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetUsersWithRoles()
+        {
+            return await _context.TodoItems.ToListAsync();
+        }
+
+  
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
